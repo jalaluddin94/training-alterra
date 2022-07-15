@@ -41,5 +41,30 @@ public class Main{
         inputan.close();
 
         System.out.println("inputted value: " + value);
+
+        //Deteksi bilangan PRIMA
+        Scanner inputan2 = new Scanner(System.in);
+        System.out.println("Enter bilangan:");
+        int value2 = inputan2.nextInt();
+
+        inputan2.close();
+
+        if(value2 > 0){
+            int factor = 0;
+            String message = "";
+            for(int i = 1; i<=value2; i++){
+                if(value2 % i == 0){
+                    factor++;
+                }
+                if(i <= value2){
+                    if(factor==2){
+                        message = "Bilangan PRIMA!";
+                    }else{
+                        message = "BUKAN bilangan PRIMA!";
+                    }
+                }
+            }
+            System.out.println(message);
+        }
     }
 }
