@@ -1,6 +1,11 @@
 import java.util.*;
 
 public class Main{
+    // Fungsi:
+    private static int matematika(int num1, int num2){
+        return num1 + num2;
+    }
+
     public static void main(String[] arg){
         String namaPanjang = "Jalaluddin AF";
         boolean isPassed = true;
@@ -31,16 +36,16 @@ public class Main{
             System.out.println(population[i]);
         }
 
-        //input dr keyboard
-        Scanner inputan = new Scanner(System.in);
+        // //input dr keyboard
+        // Scanner inputan = new Scanner(System.in);
         
-        System.out.println("Enter value:");
-        int value = inputan.nextInt();
+        // System.out.println("Enter value:");
+        // int value = inputan.nextInt();
 
-        //closing stream inputan
-        inputan.close();
+        // //closing stream inputan
+        // inputan.close();
 
-        System.out.println("inputted value: " + value);
+        // System.out.println("inputted value: " + value);
 
         //Deteksi bilangan PRIMA
         Scanner inputan2 = new Scanner(System.in);
@@ -66,5 +71,8 @@ public class Main{
             }
             System.out.println(message);
         }
+
+        // Panggil fungsi disini
+        System.out.println("Tes call fungsi:" + matematika(22, 33));
     }
 }
