@@ -1,6 +1,6 @@
 class Animal{
-    private String name;
-    private String color;
+    protected String name;
+    protected String color;
 
     public Animal(String name, String color){
         this.name = name;
@@ -39,19 +39,19 @@ public class Zoo{
     }
 }
 
-// class Buffalo extends Animal{
-//     private int weight;
+class Buffalo extends Animal{
+    private int weight;
 
-//     public Buffalo(){}
+    public Buffalo(){}
 
-//     public Buffalo(String name, String color, int weight){
-//         super(name, color);
-//         this.weight = weight;
-//     }
+    public Buffalo(String name, String color, int weight){
+        super(name, color);
+        this.weight = weight;
+    }
 
-//     public void showData(){
-//         System.out.println(name);
-//         System.out.println(color);
-//         System.out.println(this.weight);
-//     }
-// }
+    public void showData(){
+        System.out.println(name);
+        System.out.println(color);
+        System.out.println(this.weight);
+    }
+}
