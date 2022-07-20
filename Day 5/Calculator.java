@@ -1,4 +1,10 @@
 import java.util.*;
+import java.io.IOException;
+class CLS {
+    public void Main() throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    }
+}
 
 abstract class TemplateCalculator{
     public abstract void tempMessage(String message);
@@ -146,6 +152,7 @@ class ValueControl extends TemplateCalculator{
 public class Calculator {
     public static void main(String[] args){
         CalcControl cc = new CalcControl();
+        CLS cls = new CLS();
         cc.interfaceControl();
 
         Scanner scannerControl = new Scanner(System.in);
@@ -155,6 +162,15 @@ public class Calculator {
         cc.pagerBetisBawah();
 
         if(cc.getSelectedControl() == 1){
+            try {
+                cls.Main();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             OperationControl oc = new OperationControl();
             oc.interfaceControl();
 
@@ -164,6 +180,15 @@ public class Calculator {
             oc.pagerBetisBawah();
 
             if(oc.getSelectedOPControl() != 99){
+                try {
+                    cls.Main();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
                 ValueControl vc = new ValueControl();
 
                 vc.interfaceControlVal1();
@@ -176,6 +201,7 @@ public class Calculator {
                 
                 Float hasil = vc.operationMath(oc.getSelectedOPControl());
                 System.out.println("Hasil: " + hasil);
+                vc.pagerBetisBawah();
             }else{
                 scannerControl.close();
                 return;
