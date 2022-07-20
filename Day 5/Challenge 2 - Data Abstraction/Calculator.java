@@ -210,6 +210,15 @@ public class Calculator {
             scannerControl.close();
         }else{
             scannerControl.close();
+            try {
+                cls.Main();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
             return;
         }
     }
