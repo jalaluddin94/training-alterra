@@ -69,6 +69,9 @@ public class DragonOfWaterloo{
             }
             Collections.sort(potentialHeroes);
             potentialHeroes.subList(1, potentialHeroes.size()).clear();
+            ArrayList<Integer> tempKnight = heroes.getKnightHeight();
+            tempKnight.remove(potentialHeroes.get(0));
+            heroes.setKnightHeight(tempKnight);
             minimumKnightHP += potentialHeroes.get(0);
         }
 
