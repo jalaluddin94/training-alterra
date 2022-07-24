@@ -1,5 +1,3 @@
-import java.lang.*;
-
 public class FastExponentiation {
     static Integer Exp(Integer a, Integer b) {
         Double dblResult = Math.pow((double) a, (double) b);
