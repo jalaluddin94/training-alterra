@@ -1,11 +1,9 @@
+import java.lang.*;
+
 public class FastExponentiation {
     static Integer Exp(Integer a, Integer b) {
-        Integer result = 1;
-        while(b > 0){
-            result = result * a;
-            b -= 1;
-        }
-        return result;
+        Double dblResult = Math.pow((double) a, (double) b);
+        return dblResult.intValue();
     }
     public static void main(String[] args){
         System.out.println(Exp(2,3));
