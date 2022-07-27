@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "de1916a8-f88a-494f-a157-c859757c282b",
+		"name": "Training Java Alterra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16845950"
+	},
+	"item": [
+		{
+			"name": "NewsAPI",
+			"item": [
+				{
+					"name": "Articles about Tesla",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://newsapi.org/v2/everything?q=tesla&from=2022-06-27&sortBy=publishedAt&apiKey=49ae2c09f98640489dc10d16a0fafb2b",
+							"protocol": "https",
+							"host": [
+								"newsapi",
+								"org"
+							],
+							"path": [
+								"v2",
+								"everything"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "tesla"
+								},
+								{
+									"key": "from",
+									"value": "2022-06-27"
+								},
+								{
+									"key": "sortBy",
+									"value": "publishedAt"
+								},
+								{
+									"key": "apiKey",
+									"value": "49ae2c09f98640489dc10d16a0fafb2b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Business in USA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=49ae2c09f98640489dc10d16a0fafb2b",
+							"protocol": "https",
+							"host": [
+								"newsapi",
+								"org"
+							],
+							"path": [
+								"v2",
+								"top-headlines"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "us"
+								},
+								{
+									"key": "category",
+									"value": "business"
+								},
+								{
+									"key": "apiKey",
+									"value": "49ae2c09f98640489dc10d16a0fafb2b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Headlines from TechCrunch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=49ae2c09f98640489dc10d16a0fafb2b",
+							"protocol": "https",
+							"host": [
+								"newsapi",
+								"org"
+							],
+							"path": [
+								"v2",
+								"top-headlines"
+							],
+							"query": [
+								{
+									"key": "sources",
+									"value": "techcrunch"
+								},
+								{
+									"key": "apiKey",
+									"value": "49ae2c09f98640489dc10d16a0fafb2b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Articles by WallStreet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=49ae2c09f98640489dc10d16a0fafb2b",
+							"protocol": "https",
+							"host": [
+								"newsapi",
+								"org"
+							],
+							"path": [
+								"v2",
+								"everything"
+							],
+							"query": [
+								{
+									"key": "domains",
+									"value": "wsj.com"
+								},
+								{
+									"key": "apiKey",
+									"value": "49ae2c09f98640489dc10d16a0fafb2b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Articles about Apple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://newsapi.org/v2/everything?q=apple&from=2022-07-26&to=2022-07-26&sortBy=popularity&apiKey=49ae2c09f98640489dc10d16a0fafb2b",
+							"protocol": "https",
+							"host": [
+								"newsapi",
+								"org"
+							],
+							"path": [
+								"v2",
+								"everything"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "apple"
+								},
+								{
+									"key": "from",
+									"value": "2022-07-26"
+								},
+								{
+									"key": "to",
+									"value": "2022-07-26"
+								},
+								{
+									"key": "sortBy",
+									"value": "popularity"
+								},
+								{
+									"key": "apiKey",
+									"value": "49ae2c09f98640489dc10d16a0fafb2b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SWAPI",
+			"item": [
+				{
+					"name": "All Planets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swapi.dev/api/planets",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"planets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resident Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swapi.dev/api/people/1",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"people",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Starwars Film",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swapi.dev/api/films",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"films"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Starhips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swapi.dev/api/starships",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"starships"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Starship Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://swapi.dev/api/starships/2",
+							"protocol": "https",
+							"host": [
+								"swapi",
+								"dev"
+							],
+							"path": [
+								"api",
+								"starships",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
