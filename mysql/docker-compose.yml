@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: 'mysql8'
+    ports:
+      - 3306:3306
+    volumes:
+      - ../../mysql_volume:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      - MYSQL_PASSWORD=jalalAzhmatkhan94
+      - MYSQL_USER=jalaluddin
+      - MYSQL_DATABASE=training-alterra
