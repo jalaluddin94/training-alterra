@@ -4,6 +4,7 @@ import com.epemilu.government.dto.CandidateDto;
 import com.epemilu.government.dto.ErrorResponse;
 import com.epemilu.government.models.Candidate;
 import com.epemilu.government.repository.CandidateRepository;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.transaction.Transactional;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Transactional(rollbackOn = Exception.class)
@@ -40,6 +38,18 @@ public class CandidateService {
         candidateRepository.save(theCandidate);
 
         return ResponseEntity.status(HttpStatus.CREATED).headers(headers).build();
+    }
+
+    @SneakyThrows(Exception.class)
+    @ApiOperation("Get all candidates")
+    public ResponseEntity<Object> getAll(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // ArrayList<Candidate> respon = new ArrayList<>();
+        List<Candidate> resp = candidateRepository.findAll();
+
+        return ResponseEntity.status(HttpStatus.OK).headers(headers).body(resp);
     }
 
     @SneakyThrows(Exception.class)

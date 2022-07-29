@@ -17,6 +17,13 @@ public class CandidateController {
     private CandidateService candidateService;
 
     @SneakyThrows(Exception.class)
+    @GetMapping(path = "/candidate", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getAllCandidates(){
+        log.info("api /api/v1/candidate/getAllCandidate is executed...");
+        return candidateService.getAll();
+    }
+
+    @SneakyThrows(Exception.class)
     @PostMapping(path = "/candidate", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> addCandidate(@RequestBody CandidateDto candidateData){
         log.info("api /api/v1/candidate/add is executed...");
@@ -24,7 +31,7 @@ public class CandidateController {
     }
 
     @SneakyThrows(Exception.class)
-    @PutMapping(path = "/candidate/{idCandidate}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "/candidate/{IdCandidate}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> updateCandidate(
             @PathVariable Long IdCandidate,
             @RequestBody CandidateDto candidateData
