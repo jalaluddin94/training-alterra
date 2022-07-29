@@ -39,4 +39,11 @@ public class CandidateController {
         log.info("api /api/v1/candidate/update is executed...");
         return candidateService.update(IdCandidate, candidateData);
     }
+
+    @SneakyThrows(Exception.class)
+    @DeleteMapping(path = "/candidate/{IdCandidate}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> deleteCandidate(@PathVariable Long IdCandidate){
+        log.info("api /api/v1/candidate/deleteCandidate is executed...");
+        return candidateService.delete(IdCandidate);
+    }
 }

@@ -72,4 +72,26 @@ public class CandidateService {
 
         return ResponseEntity.status(HttpStatus.OK).headers(headers).body(candidateReq);
     }
+
+    @SneakyThrows(Exception.class)
+    @ApiOperation("Delete candidate data")
+    public ResponseEntity<Object> delete(Long idCandidate){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        if(Optional.ofNullable(idCandidate).isPresent()) {
+            Candidate candidate = candidateRepository.findById(idCandidate).orElse(null);
+            if (Optional.ofNullable(candidate).isPresent()) {
+                candidateRepository.delete(candidate);
+            }else{
+                ErrorResponse theError = new ErrorResponse("9999", "Data not found");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).headers(headers).body(theError);
+            }
+        }else{
+            ErrorResponse theError = new ErrorResponse("9998", "ID not valid");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).headers(headers).body(theError);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).headers(headers).body("Delete success");
+    }
 }
