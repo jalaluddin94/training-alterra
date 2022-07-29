@@ -7,10 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -21,8 +18,18 @@ public class CandidateController {
 
     @SneakyThrows(Exception.class)
     @PostMapping(path = "/candidate", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> addCandidate(@RequestBody CandidateDto dto){
+    public ResponseEntity<Object> addCandidate(@RequestBody CandidateDto candidateData){
         log.info("api /api/v1/candidate/add is executed...");
-        return candidateService.add(dto);
+        return candidateService.add(candidateData);
+    }
+
+    @SneakyThrows(Exception.class)
+    @PutMapping(path = "/candidate/{idCandidate}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> updateCandidate(
+            @PathVariable Long IdCandidate,
+            @RequestBody CandidateDto candidateData
+    ){
+        log.info("api /api/v1/candidate/update is executed...");
+        return candidateService.update(IdCandidate, candidateData);
     }
 }
