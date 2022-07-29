@@ -77,7 +77,7 @@ public class CandidateService {
     @ApiOperation("Delete candidate data")
     public ResponseEntity<Object> delete(Long idCandidate){
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.setContentType(MediaType.TEXT_PLAIN);
 
         if(Optional.ofNullable(idCandidate).isPresent()) {
             Candidate candidate = candidateRepository.findById(idCandidate).orElse(null);
@@ -92,6 +92,8 @@ public class CandidateService {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).headers(headers).body(theError);
         }
 
-        return ResponseEntity.status(HttpStatus.OK).headers(headers).body("Delete success");
+        String respon = "Delete success";
+
+        return ResponseEntity.status(HttpStatus.OK).headers(headers).body(respon);
     }
 }
