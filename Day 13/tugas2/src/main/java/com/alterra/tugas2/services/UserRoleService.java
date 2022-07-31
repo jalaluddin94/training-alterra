@@ -95,11 +95,11 @@ public class UserRoleService implements UserDetailsService {
     }
 
     @SneakyThrows(Exception.class)
-    public AppUser getUser(String username) {
+    public AppUser getUser(String phone) {
 
-        log.info("getting user{} from the database", username);
+        log.info("getting user{} from the database", phone);
 
-        return userRoleRepository.findByUsername(username);
+        return userRoleRepository.findByPhone(phone);
     }
 
     @SneakyThrows(Exception.class)

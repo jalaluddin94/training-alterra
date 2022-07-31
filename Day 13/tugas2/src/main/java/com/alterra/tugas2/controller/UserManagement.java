@@ -27,7 +27,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v2")
 public class UserManagement {
     @Autowired
     private UserRoleService userRoleService;
@@ -97,5 +97,12 @@ public class UserManagement {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/user/save").toUriString());
 
         return ResponseEntity.created(uri).body(userRoleService.saveUser(appUserDto));
+    }
+
+    @SneakyThrows(Exception.class)
+    @GetMapping("/user/{phone}")
+    public ResponseEntity<Object> getUser(@PathVariable(name = "phone") String phone) {
+
+        return ResponseEntity.ok().body(userRoleService.getUser(phone));
     }
 }

@@ -37,8 +37,8 @@ public class Tugas2Application {
 
 			appUserService.addRoleToUser("0812345", "ROLE_USER");
 			appUserService.addRoleToUser("0812344", "ROLE_MANAGER");
-			appUserService.addRoleToUser("0812343", "ROLE_ADMIN");
-			appUserService.addRoleToUser("0812342", "ROLE_SUPER_ADMIN");
+			appUserService.addRoleToUser("0812342", "ROLE_ADMIN");
+			appUserService.addRoleToUser("0812343", "ROLE_SUPER_ADMIN");
 		};
 	}
 
