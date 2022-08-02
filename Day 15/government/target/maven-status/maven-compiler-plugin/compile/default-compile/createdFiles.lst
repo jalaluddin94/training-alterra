@@ -1,0 +1,8 @@
+com\epemilu\government\models\Candidate.class
+com\epemilu\government\dto\CandidateDto.class
+com\epemilu\government\GovernmentApplication.class
+com\epemilu\government\repository\CandidateRepository.class
+com\epemilu\government\controller\CandidateController.class
+com\epemilu\government\SwaggerConfig.class
+com\epemilu\government\dto\ErrorResponse.class
+com\epemilu\government\services\CandidateService.class
