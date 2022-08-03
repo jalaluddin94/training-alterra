@@ -1,0 +1,13 @@
+currDate=`date`
+folder1="$1 at $currDate"
+[ ! -d "./$folder1" ] && echo "creating folder: $folder1" && mkdir "./$folder1"
+[ ! -d "./$folder1/about_me" ] && echo "creating folder: ./$folder1/about_me" && mkdir "./$folder1/about_me"
+[ ! -d "./$folder1/about_me/personal" ] && echo "creating folder: ./$folder1/about_me/personal" && mkdir "./$folder1/about_me/personal" 
+touch "./$folder1/about_me/personal/facebook.txt"
+echo "facebook.com/$2" > "./$folder1/about_me/personal/facebook.txt"
+[ ! -d "./$folder1/about_me/professional" ] && echo "creating folder: ./$folder1/about_me/professional" && mkdir "./$folder1/about_me/professional"
+touch "./$folder1/about_me/professional/linkedin.txt"
+echo "linkedin.com/$3" > "./$folder1/about_me/professional/linkedin.txt"
+[ ! -d "./$folder1/my_friends" ] && echo "creating folder: ./$folder1/my_friends" && mkdir "./$folder1/my_friends"
+touch "./$folder1/my_friends/list_of_my_friends.txt"
+curl -K https://gist.githubusercontent.com/tegarimansyah/e91f335753ab2c7fb12815779677e914/raw/94864388379fecee450fde26e3e73bfb2bcda194/list%2520of%2520my%2520friends.txt >> "./$folder1/my_friends/list_of_my_friends.txt"
