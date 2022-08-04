@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: 'jenkins'
+    privileged: true
+    user: root
+    ports:
+      - 8085:8085
+      - 50000:50000
+    volumes:
+      - ../../jenkins_volume:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JENKINS_OPTS="--httpPort=8085"
+    #  - MYSQL_PASSWORD=jalalAzhmatkhan94
+    #  - MYSQL_USER=jalaluddin
+    #  - MYSQL_DATABASE=training-alterra
